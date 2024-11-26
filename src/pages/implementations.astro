@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About';
+const description = 'About';
+const permalink = `${Astro.site?.href}about`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <div class="container">
+    <h1>Implementations</h1>
+    <p>Here are some demos of ChatLSP in action.<p>
+    <div class="chatlsp-vscode-extension-container">
+      <h2>ChatLSP VSCode Extension </h2>
+      <div class="hero-image-container">
+        <picture>
+          <!-- When screen is bigger than an iPhone, use the original hero image. -->
+          <source srcset="/assets/chatlsp-demo.gif" media="(min-width: 480px)">
+          <!-- Fall back to smaller image. -->
+          <!-- TODO: We need to make a smaller image. -->
+          <!-- TODO: Image should have a transparent background. -->
+          <img class="hero-image" alt="A demo of the ChatLSP VSCode extension." src="/assets/chatlsp-demo.gif">
+        </picture>
+        <p class="caption">
+          <a href="https://github.com/HongweiRuan/llmcompletion/releases/tag/v0.1.0" target="_blank" rel="noopener">Get it here!</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .chatlsp-vscode-extension-container {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .hero-image-container {
+    padding-top: 2rem;
+  }
+</style>

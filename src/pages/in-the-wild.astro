@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'In the Wild';
+const description = 'In the Wild';
+const permalink = `${Astro.site?.href}in-the-wild`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="implementations">
+  <div class="container">
+    <h1>In the Wild</h1>
+    <p>Check out where ChatLSP is used.</p>
+    <div class="collaborations-container">
+      <h2>Collaborations</h2>
+      <p>Here is the list of our collaborators who are actively using ChatLSP.</p>
+      <table class="table">
+        <tr>
+          <th>Organization</th>
+          <th>Description</th>
+          <th>Homepage</th>
+        </tr>
+        <tr>
+          <td>Continue</td>
+          <td>Continue is the leading open-source AI code assistant inside of VS Code and JetBrains.</td>
+          <td><a href="https://www.continue.dev">https://www.continue.dev</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="languages-container">
+      <h2>Languages</h2>
+      <p>Here is the list of languages supported by the ChatLSP protocol.</p>
+      <ul>
+        <li>Hazel</li>
+        <li>TypeScript</li>
+        <li>OCaml</li>
+      </ul>
+    </div>
+
+    <!-- <table class="table"> -->
+    <!--   <tr> -->
+    <!--     <th>Language Server</th> -->
+    <!--     <th>Supported Languages</th> -->
+    <!--     <th>Maintainers</th> -->
+    <!--   </tr> -->
+    <!--   <tr> -->
+    <!--     <td>HazeLS</td> -->
+    <!--     <td>Hazel</td> -->
+    <!--     <td>Future of Programming Lab</td> -->
+    <!--   </tr> -->
+    <!--   <tr> -->
+    <!--     <td>typescript-language-server (via our VSCode extension)</td> -->
+    <!--     <td>TypeScript</td> -->
+    <!--     <td>TypeScript Language Server Team</td> -->
+    <!--   </tr> -->
+    <!--   <tr> -->
+    <!--     <td>ocamllsp (via our VSCode extension)</td> -->
+    <!--     <td>Ocaml</td> -->
+    <!--     <td>Ocaml Language Server Team</td> -->
+    <!--   </tr> -->
+    <!-- </table> -->
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .collaborations-container {
+    margin-top: 3rem;
+  }
+
+  .languages-container {
+    margin-top: 3rem;
+  }
+</style>

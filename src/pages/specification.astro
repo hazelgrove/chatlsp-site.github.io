@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Spec from "../components/Spec.astro";
+import { expectedType, relevantTypes, relevantHeaders, llmCompletion, llmCompletionResolveErrors } from "../scripts/lspMethodSpecs";
+
+const title = 'Specification';
+const description = 'Specification';
+const permalink = `${Astro.site?.href}specification`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="specification">
+  <div class="container">
+    <h1>Specification</h1>
+    <p>This document describes the extended LSP methods supported by ChatLSP.</p>
+    <p>For the full LSP specifications, check the <a href="https://microsoft.github.io/language-server-protocol/">Official Page for Language Server Protocol</a>.</p>
+    <hr>
+    <Spec
+      method={expectedType.method}
+      description={expectedType.description}
+      req={expectedType.req}
+      res={expectedType.res}
+      reqInterface={expectedType.reqInterface}
+      resInterface={expectedType.resInterface}
+    />
+    <Spec
+      method={relevantTypes.method}
+      description={relevantTypes.description}
+      req={relevantTypes.req}
+      res={relevantTypes.res}
+      reqInterface={relevantTypes.reqInterface}
+      resInterface={relevantTypes.resInterface}
+    />
+    <Spec
+      method={relevantHeaders.method}
+      description={relevantHeaders.description}
+      req={relevantHeaders.req}
+      res={relevantHeaders.res}
+      reqInterface={relevantHeaders.reqInterface}
+      resInterface={relevantHeaders.resInterface}
+    />
+    <Spec
+      method={llmCompletion.method}
+      description={llmCompletion.description}
+      req={llmCompletion.req}
+      res={llmCompletion.res}
+      reqInterface={llmCompletion.reqInterface}
+      resInterface={llmCompletion.resInterface}
+    />
+    <Spec
+      method={llmCompletionResolveErrors.method}
+      description={llmCompletionResolveErrors.description}
+      req={llmCompletionResolveErrors.req}
+      res={llmCompletionResolveErrors.res}
+      reqInterface={llmCompletionResolveErrors.reqInterface}
+      resInterface={llmCompletionResolveErrors.resInterface}
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+</style>

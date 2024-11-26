@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About';
+const description = 'About';
+const permalink = `${Astro.site?.href}about`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink}>
+  <div class="container">
+    <div class="about-container">
+      <h1>About</h1>
+      <p>Developer tooling is crucial for developer productivity. Language Server Protocol, in particular, allow language features to be communicated to editors without having to rely on hacky editor magic.</p>
+      <p>However, current implementations of the protocol do not adequately support the meteoric rise in demand for code completion via LLMs. LLMs are prone to hallucination, and existing methods such as exhaustive retrieval and RAG are limited by token size and inconsistency. Approaching this with a language semantics-based retrieval can have benefits over unstructured approaches, but LSP currently do not expose an interface for static retrieval.</p>
+      <p>We propose a conservative addendum to the Language Server Protocol, ChatLSP, to address this issue. ChatLSP defines new LSP methods that abstracts over static retrieval algorithms. Being a part of LSP allows for different editors and language developers to support this feature easily. We plan on working with language developers to provide language-specific static retrieval algorithms.</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .container {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+</style>

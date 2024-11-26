@@ -1,0 +1,14 @@
+---
+import { Code } from "astro:components";
+
+const { method, description, req, res, reqInterface, resInterface } = Astro.props
+---
+
+<h3>{method}</h3>
+<p>{description}</p>
+<h6>Request:</h6>
+<p><code>{req}</code>defined as follows:</p>
+<Code lang="ts" code={reqInterface} theme="solarized-light"/>
+<h6>Response:</h6>
+<p><code>{res}</code>defined as follows:</p>
+<Code lang="ts" code={resInterface} theme="solarized-light"/>
